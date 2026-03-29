@@ -1,0 +1,13 @@
+﻿[2026-03-30 00:00:53.448] [Coordinator] [INFO] Coordinator started scenario: Success
+[2026-03-30 00:00:53.450] [Coordinator] [INFO] Scenario root: D:\CSC\5th\S2\Distributed systems\Lab6\runs\success_20260329_210053
+[2026-03-30 00:00:54.854] [Coordinator] [INFO] Child process PID=97920 finished with exit code 0.
+[2026-03-30 00:00:54.854] [Coordinator] [INFO] Child process PID=90208 finished with exit code 0.
+[2026-03-30 00:00:54.855] [Coordinator] [INFO] Child process PID=117080 finished with exit code 0.
+[2026-03-30 00:00:54.866] [Coordinator] [INFO] Final contract states:
+[2026-03-30 00:00:54.867] [Coordinator] [INFO] contract_ab: Redeemed
+[2026-03-30 00:00:54.867] [Coordinator] [INFO] contract_bc: Redeemed
+[2026-03-30 00:00:54.867] [Coordinator] [INFO] contract_ca: Redeemed
+[2026-03-30 00:00:54.867] [Coordinator] [INFO] Final balances:
+[2026-03-30 00:00:54.872] [Coordinator] [INFO] PartyA: CoinA=90, CoinB=0, CoinC=20
+[2026-03-30 00:00:54.872] [Coordinator] [INFO] PartyB: CoinA=10, CoinB=85, CoinC=0
+[2026-03-30 00:00:54.872] [Coordinator] [INFO] PartyC: CoinA=0, CoinB=15, CoinC=80

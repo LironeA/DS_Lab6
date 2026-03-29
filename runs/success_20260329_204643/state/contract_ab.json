@@ -1,0 +1,14 @@
+﻿{
+  "contractId": "contract_ab",
+  "fromParty": "PartyA",
+  "toParty": "PartyB",
+  "assetName": "CoinA",
+  "amount": 10,
+  "hashLock": "294A47E805D6D668079CFCBA03996900C84D881129DE2D2AE0876FD956EAD7E5",
+  "timeLockUtc": "2026-03-29T20:46:58.87676Z",
+  "status": "Redeemed",
+  "fundedAtUtc": "2026-03-29T20:46:43.9007761Z",
+  "redeemedAtUtc": "2026-03-29T20:46:44.9563737Z",
+  "refundedAtUtc": null,
+  "revealedSecret": "secret-531d0e89abea4affa1e54b6003ae3fe2"
+}

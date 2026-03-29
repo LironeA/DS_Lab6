@@ -1,0 +1,13 @@
+﻿[2026-03-29 23:46:43.860] [PartyA] [INFO] Process started for PartyA.
+[2026-03-29 23:46:43.874] [PartyA] [INFO] Generating secret and hash lock.
+[2026-03-29 23:46:43.876] [PartyA] [INFO] Generated hash lock: 294A47E805D6D668079CFCBA03996900C84D881129DE2D2AE0876FD956EAD7E5
+[2026-03-29 23:46:43.886] [PartyA] [INFO] Created contract contract_ab: PartyA -> PartyB, 10 CoinA, timelock until 2026-03-29T20:46:58.8767600Z
+[2026-03-29 23:46:43.901] [PartyA] [INFO] Funded contract contract_ab.
+[2026-03-29 23:46:43.901] [PartyA] [INFO] Waiting until contract C->A is funded.
+[2026-03-29 23:46:44.427] [PartyA] [INFO] Success scenario: redeeming contract C->A with the secret.
+[2026-03-29 23:46:44.428] [PartyA] [INFO] Redeemed contract contract_ca using the revealed secret.
+[2026-03-29 23:46:45.219] [PartyA] [INFO] contract_ab already finished with status Redeemed.
+[2026-03-29 23:46:45.225] [PartyA] [INFO] Observed balances for PartyA: CoinA=90, CoinB=0, CoinC=20
+[2026-03-29 23:46:45.225] [PartyA] [INFO] Observed balances for PartyB: CoinA=10, CoinB=85, CoinC=0
+[2026-03-29 23:46:45.225] [PartyA] [INFO] Observed balances for PartyC: CoinA=0, CoinB=15, CoinC=80
+[2026-03-29 23:46:45.225] [PartyA] [INFO] Process completed.

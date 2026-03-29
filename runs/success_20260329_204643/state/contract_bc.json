@@ -1,0 +1,14 @@
+﻿{
+  "contractId": "contract_bc",
+  "fromParty": "PartyB",
+  "toParty": "PartyC",
+  "assetName": "CoinB",
+  "amount": 15,
+  "hashLock": "294A47E805D6D668079CFCBA03996900C84D881129DE2D2AE0876FD956EAD7E5",
+  "timeLockUtc": "2026-03-29T20:46:54.1360691Z",
+  "status": "Redeemed",
+  "fundedAtUtc": "2026-03-29T20:46:44.1536711Z",
+  "redeemedAtUtc": "2026-03-29T20:46:44.6927069Z",
+  "refundedAtUtc": null,
+  "revealedSecret": "secret-531d0e89abea4affa1e54b6003ae3fe2"
+}

@@ -1,0 +1,13 @@
+﻿[2026-03-29 23:46:22.421] [PartyA] [INFO] Process started for PartyA.
+[2026-03-29 23:46:22.433] [PartyA] [INFO] Generating secret and hash lock.
+[2026-03-29 23:46:22.446] [PartyA] [INFO] Generated hash lock: 66C75AA8FF75E19A07FC213C354F69FC312276698D9436CAB36F0663D74067E7
+[2026-03-29 23:46:22.459] [PartyA] [INFO] Created contract contract_ab: PartyA -> PartyB, 10 CoinA, timelock until 2026-03-29T20:46:34.4470102Z
+[2026-03-29 23:46:22.475] [PartyA] [INFO] Funded contract contract_ab.
+[2026-03-29 23:46:22.475] [PartyA] [INFO] Waiting until contract C->A is funded.
+[2026-03-29 23:46:23.006] [PartyA] [WARN] Timeout scenario: PartyA intentionally does not redeem contract C->A.
+[2026-03-29 23:46:34.567] [PartyA] [WARN] Timelock expired for contract_ab. Trying refund.
+[2026-03-29 23:46:34.569] [PartyA] [WARN] Refund executed for contract_ab.
+[2026-03-29 23:46:34.579] [PartyA] [INFO] Observed balances for PartyA: CoinA=100, CoinB=0, CoinC=0
+[2026-03-29 23:46:34.579] [PartyA] [INFO] Observed balances for PartyB: CoinA=0, CoinB=100, CoinC=0
+[2026-03-29 23:46:34.579] [PartyA] [INFO] Observed balances for PartyC: CoinA=0, CoinB=0, CoinC=100
+[2026-03-29 23:46:34.580] [PartyA] [INFO] Process completed.

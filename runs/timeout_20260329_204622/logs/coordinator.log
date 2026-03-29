@@ -1,0 +1,13 @@
+﻿[2026-03-29 23:46:22.361] [Coordinator] [INFO] Coordinator started scenario: Timeout
+[2026-03-29 23:46:22.365] [Coordinator] [INFO] Scenario root: D:\CSC\5th\S2\Distributed systems\Lab6\runs\timeout_20260329_204622
+[2026-03-29 23:46:34.587] [Coordinator] [INFO] Child process PID=16592 finished with exit code 0.
+[2026-03-29 23:46:34.587] [Coordinator] [INFO] Child process PID=78172 finished with exit code 0.
+[2026-03-29 23:46:34.588] [Coordinator] [INFO] Child process PID=53140 finished with exit code 0.
+[2026-03-29 23:46:34.609] [Coordinator] [INFO] Final contract states:
+[2026-03-29 23:46:34.610] [Coordinator] [INFO] contract_ab: Refunded
+[2026-03-29 23:46:34.610] [Coordinator] [INFO] contract_bc: Refunded
+[2026-03-29 23:46:34.610] [Coordinator] [INFO] contract_ca: Refunded
+[2026-03-29 23:46:34.611] [Coordinator] [INFO] Final balances:
+[2026-03-29 23:46:34.619] [Coordinator] [INFO] PartyA: CoinA=100, CoinB=0, CoinC=0
+[2026-03-29 23:46:34.619] [Coordinator] [INFO] PartyB: CoinA=0, CoinB=100, CoinC=0
+[2026-03-29 23:46:34.619] [Coordinator] [INFO] PartyC: CoinA=0, CoinB=0, CoinC=100

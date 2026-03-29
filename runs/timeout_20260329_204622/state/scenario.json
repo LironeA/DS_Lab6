@@ -1,0 +1,6 @@
+﻿{
+  "kind": "Timeout",
+  "contractAbTimeLockSeconds": 12,
+  "contractBcTimeLockSeconds": 8,
+  "contractCaTimeLockSeconds": 4
+}

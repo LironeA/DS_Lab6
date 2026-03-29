@@ -1,0 +1,17 @@
+﻿{
+  "PartyA": {
+    "CoinA": 100,
+    "CoinB": 0,
+    "CoinC": 0
+  },
+  "PartyB": {
+    "CoinA": 0,
+    "CoinB": 100,
+    "CoinC": 0
+  },
+  "PartyC": {
+    "CoinA": 0,
+    "CoinB": 0,
+    "CoinC": 100
+  }
+}

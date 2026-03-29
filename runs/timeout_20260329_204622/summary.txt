@@ -1,0 +1,15 @@
+﻿=== Scenario Summary ===
+Scenario: Timeout
+Path: D:\CSC\5th\S2\Distributed systems\Lab6\runs\timeout_20260329_204622
+Processes:
+  PID 16592, ExitCode=0
+  PID 78172, ExitCode=0
+  PID 53140, ExitCode=0
+Contracts:
+  contract_ab: PartyA -> PartyB, 10 CoinA, Status=Refunded
+  contract_bc: PartyB -> PartyC, 15 CoinB, Status=Refunded
+  contract_ca: PartyC -> PartyA, 20 CoinC, Status=Refunded
+Balances:
+  PartyA: CoinA=100, CoinB=0, CoinC=0
+  PartyB: CoinA=0, CoinB=100, CoinC=0
+  PartyC: CoinA=0, CoinB=0, CoinC=100

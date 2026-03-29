@@ -1,0 +1,14 @@
+﻿{
+  "contractId": "contract_ca",
+  "fromParty": "PartyC",
+  "toParty": "PartyA",
+  "assetName": "CoinC",
+  "amount": 20,
+  "hashLock": "66C75AA8FF75E19A07FC213C354F69FC312276698D9436CAB36F0663D74067E7",
+  "timeLockUtc": "2026-03-29T20:46:26.9525639Z",
+  "status": "Refunded",
+  "fundedAtUtc": "2026-03-29T20:46:22.9706245Z",
+  "redeemedAtUtc": null,
+  "refundedAtUtc": "2026-03-29T20:46:27.1822472Z",
+  "revealedSecret": null
+}

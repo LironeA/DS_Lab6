@@ -1,0 +1,6 @@
+﻿{
+  "kind": "Success",
+  "contractAbTimeLockSeconds": 15,
+  "contractBcTimeLockSeconds": 10,
+  "contractCaTimeLockSeconds": 6
+}

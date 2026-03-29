@@ -1,0 +1,15 @@
+﻿=== Scenario Summary ===
+Scenario: Success
+Path: D:\CSC\5th\S2\Distributed systems\Lab6\runs\success_20260329_204643
+Processes:
+  PID 118744, ExitCode=0
+  PID 47812, ExitCode=0
+  PID 50328, ExitCode=0
+Contracts:
+  contract_ab: PartyA -> PartyB, 10 CoinA, Status=Redeemed
+  contract_bc: PartyB -> PartyC, 15 CoinB, Status=Redeemed
+  contract_ca: PartyC -> PartyA, 20 CoinC, Status=Redeemed
+Balances:
+  PartyA: CoinA=90, CoinB=0, CoinC=20
+  PartyB: CoinA=10, CoinB=85, CoinC=0
+  PartyC: CoinA=0, CoinB=15, CoinC=80

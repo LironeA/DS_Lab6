@@ -1,0 +1,11 @@
+﻿[2026-03-29 23:46:22.423] [PartyC] [INFO] Process started for PartyC.
+[2026-03-29 23:46:22.435] [PartyC] [INFO] Waiting until contract B->C is funded.
+[2026-03-29 23:46:22.952] [PartyC] [INFO] Creating contract C->A using the same hash lock.
+[2026-03-29 23:46:22.956] [PartyC] [INFO] Created contract contract_ca: PartyC -> PartyA, 20 CoinC, timelock until 2026-03-29T20:46:26.9525639Z
+[2026-03-29 23:46:22.970] [PartyC] [INFO] Funded contract contract_ca.
+[2026-03-29 23:46:27.180] [PartyC] [WARN] Timelock expired for contract_ca. Trying refund.
+[2026-03-29 23:46:27.182] [PartyC] [WARN] Refund executed for contract_ca.
+[2026-03-29 23:46:27.197] [PartyC] [INFO] Observed balances for PartyA: CoinA=90, CoinB=0, CoinC=0
+[2026-03-29 23:46:27.198] [PartyC] [INFO] Observed balances for PartyB: CoinA=0, CoinB=85, CoinC=0
+[2026-03-29 23:46:27.198] [PartyC] [INFO] Observed balances for PartyC: CoinA=0, CoinB=0, CoinC=100
+[2026-03-29 23:46:27.198] [PartyC] [INFO] Process completed.
