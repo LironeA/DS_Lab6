@@ -211,32 +211,119 @@ Timeout-сценарій показує, що без розкриття секр
 
 ### 11.1. Приклад успішного запуску
 
-Очікуваний результат:
+Для перевірки було виконано команду:
 
-- усі три контракти мають статус `Redeemed`;
-- баланси стають такими:
-  `PartyA`: отримує `20 CoinC`
-  `PartyB`: отримує `10 CoinA`
-  `PartyC`: отримує `15 CoinB`
+```powershell
+dotnet .\bin\Debug\net8.0\Lab6.dll coordinator Success
+```
+
+Отриманий підсумок запуску:
+
+```text
+=== Scenario Summary ===
+Scenario: Success
+Path: D:\CSC\5th\S2\Distributed systems\Lab6\runs\success_20260329_210053
+Processes:
+  PID 97920, ExitCode=0
+  PID 90208, ExitCode=0
+  PID 117080, ExitCode=0
+Contracts:
+  contract_ab: PartyA -> PartyB, 10 CoinA, Status=Redeemed
+  contract_bc: PartyB -> PartyC, 15 CoinB, Status=Redeemed
+  contract_ca: PartyC -> PartyA, 20 CoinC, Status=Redeemed
+Balances:
+  PartyA: CoinA=90, CoinB=0, CoinC=20
+  PartyB: CoinA=10, CoinB=85, CoinC=0
+  PartyC: CoinA=0, CoinB=15, CoinC=80
+```
+
+Фрагменти логів успішного сценарію:
+
+```text
+[2026-03-30 00:00:53.520] [PartyA] [INFO] Generated hash lock: 0E103968287FFACF2576027AEBF6049250ADDB7790D1C850CCED5859DEA27EF4
+[2026-03-30 00:00:53.531] [PartyA] [INFO] Created contract contract_ab: PartyA -> PartyB, 10 CoinA, timelock until 2026-03-29T21:01:08.5210997Z
+[2026-03-30 00:00:54.082] [PartyA] [INFO] Redeemed contract contract_ca using the revealed secret.
+
+[2026-03-30 00:00:54.341] [PartyC] [INFO] Using the revealed secret to redeem contract B->C.
+[2026-03-30 00:00:54.343] [PartyC] [INFO] Redeemed contract contract_bc using the revealed secret.
+
+[2026-03-30 00:00:54.592] [PartyB] [INFO] Secret was revealed by PartyC. Redeeming contract A->B.
+[2026-03-30 00:00:54.594] [PartyB] [INFO] Redeemed contract contract_ab using the revealed secret.
+```
+
+Пояснення:
+
+- `PartyA` згенерувала секрет і створила перший контракт `A -> B`.
+- `PartyC` створила контракт `C -> A`, після чого `PartyA` виконала `redeem` і розкрила секрет.
+- `PartyC` побачила секрет у стані контракту `C -> A` і завершила `redeem` для `B -> C`.
+- `PartyB` отримала той самий секрет із контракту `B -> C` і завершила `redeem` для `A -> B`.
+- У результаті всі три контракти завершилися зі статусом `Redeemed`, а баланси змінилися відповідно до ланцюга обміну.
 
 ### 11.2. Приклад timeout-запуску
 
-Очікуваний результат:
+Для перевірки було виконано команду:
 
-- секрет не розкривається;
-- усі контракти завершуються через `Refunded`;
-- баланси повертаються до початкових значень.
+```powershell
+dotnet .\bin\Debug\net8.0\Lab6.dll coordinator Timeout
+```
+
+Отриманий підсумок запуску:
+
+```text
+=== Scenario Summary ===
+Scenario: Timeout
+Path: D:\CSC\5th\S2\Distributed systems\Lab6\runs\timeout_20260329_204622
+Processes:
+  PID 16592, ExitCode=0
+  PID 78172, ExitCode=0
+  PID 53140, ExitCode=0
+Contracts:
+  contract_ab: PartyA -> PartyB, 10 CoinA, Status=Refunded
+  contract_bc: PartyB -> PartyC, 15 CoinB, Status=Refunded
+  contract_ca: PartyC -> PartyA, 20 CoinC, Status=Refunded
+Balances:
+  PartyA: CoinA=100, CoinB=0, CoinC=0
+  PartyB: CoinA=0, CoinB=100, CoinC=0
+  PartyC: CoinA=0, CoinB=0, CoinC=100
+```
+
+Фрагменти логів timeout-сценарію:
+
+```text
+[2026-03-29 23:46:23.006] [PartyA] [WARN] Timeout scenario: PartyA intentionally does not redeem contract C->A.
+
+[2026-03-29 23:46:27.180] [PartyC] [WARN] Timelock expired for contract_ca. Trying refund.
+[2026-03-29 23:46:27.182] [PartyC] [WARN] Refund executed for contract_ca.
+
+[2026-03-29 23:46:30.858] [PartyB] [WARN] Timelock expired for contract_bc. Trying refund.
+[2026-03-29 23:46:30.859] [PartyB] [WARN] Refund executed for contract_bc.
+
+[2026-03-29 23:46:34.567] [PartyA] [WARN] Timelock expired for contract_ab. Trying refund.
+[2026-03-29 23:46:34.569] [PartyA] [WARN] Refund executed for contract_ab.
+```
+
+Пояснення:
+
+- `PartyA` навмисно не виконала `redeem` у контракті `C -> A`, тому секрет не був розкритий.
+- Через відсутність секрету `PartyC` не могла передати його далі, а `PartyB` не могла завершити свій `redeem`.
+- Після завершення таймлоків сторони послідовно виконали `refund` для своїх контрактів.
+- Усі три контракти отримали статус `Refunded`, а баланси повернулися до початкового стану.
 
 ### 11.3. Короткий аналіз логів
 
-За логами можна простежити:
+За фактичними логами можна простежити повний життєвий цикл контрактів:
 
-- хто створив контракт;
-- хто його профінансував;
-- коли було розкрито секрет;
-- як інші сторони використали той самий секрет;
-- у якому місці сценарій зупинився при timeout;
-- які `refund` були виконані після завершення таймлоків.
+- генерацію секрету і побудову спільного `hash lock`;
+- створення і фінансування трьох HTLC-контрактів у правильному порядку;
+- момент першого розкриття секрету в успішному сценарії;
+- повторне використання того самого секрету іншими сторонами;
+- точку зупинки сценарію при timeout, коли `PartyA` не виконує `redeem`;
+- запуск `refund` після завершення відповідних таймлоків.
+
+Отже, журнали підтверджують дві основні властивості моделі:
+
+- у сценарії `Success` відбувається повний тристоронній обмін активами;
+- у сценарії `Timeout` активи не губляться, а коректно повертаються власникам.
 
 ## 12. Посилання на репозиторій
 
